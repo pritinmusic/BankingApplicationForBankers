@@ -5,8 +5,6 @@ import com.pratiksha.demo.model.Response;
 import com.pratiksha.demo.repository.EmployeeRepository;
 import com.pratiksha.demo.utility.CommonProperties;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -39,11 +37,11 @@ public class EmployeeService {
 
         if (bankEmployee == null) {
             response = new Response();
-            response.setType("Error");
-            response.setMessage("No data found");
+            response.setType(CommonProperties.ERROR_TYPE);
+            response.setMessage(CommonProperties.NO_DATA_FOUND);
         } else {
             response = new Response();
-            response.setType("Success");
+            response.setType(CommonProperties.SUCCESS_TYPE);
             response.setEmployee(bankEmployee);
         }
 
@@ -58,12 +56,12 @@ public class EmployeeService {
          repo.delete(bankEmployee);
         if(bankEmployee != null) {
             response = new Response();
-            response.setType("Success");
-            response.setMessage("Delete  Successfully");
+            response.setType(CommonProperties.SUCCESS_TYPE);
+            response.setMessage(CommonProperties.SUCCESS_DELETE_MESSAGE);
         } else {
             response = new Response();
-            response.setType("Error");
-            response.setMessage("No Data found!!");
+            response.setType(CommonProperties.ERROR_TYPE);
+            response.setMessage(CommonProperties.NO_DATA_FOUND);
         }
         return response;
     }
