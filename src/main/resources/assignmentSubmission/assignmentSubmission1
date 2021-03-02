@@ -3,10 +3,10 @@ differance between api and global exception ....need to use both ?
 how to decide use global exception ...?
 how to decide which exception will throw ?
 ConstrainViolationException ....why and how ?
-private Boolean isActive =false ---> is this true
+//private Boolean isActive =false ---> is this true
 
 
-@RstController --> used for creating rest api
+@RstController --> used for creating rest api layer /bean of class by container
 @Autowired --> we are asking object of required class
 @GetMapping --> To Get data from server
 @PostMapping --> To add data to server
@@ -15,21 +15,20 @@ private Boolean isActive =false ---> is this true
 @DeleteMapping-->used to delete data
 @RequiredArgConstructor --> used when we are not using @Autowired annotation
 
-@Data-->
-@Id--> identity key in table
-@GeneratedValue -->used to auto increament id in table
+@Data-->to generate getter,setter,toString and equalAndHashCode
+@Id--> primary key in table
+@GeneratedValue -->used to tell to how to generate the value for primary key
 @AllArgConstructor-->Create All Arg. Constructor
 @NoArgConstructor --> Create No Arg.Constructor
-@Table --> used to create table in database
+@Table --> used to tell table name in database
 @Entity --> Indicate entity class
-@RequestHeader--> when passing parameter from header mostly used for update Information
-@PathVariable --> when passing variable from header
-@RequestBody --> passing parameters from body of postman
+@RequestHeader--> when passing parameter in header  of request
+@PathVariable --> when passing variable in url of request
+@RequestBody --> passing parameters in body of request
 
-@Service--> indicate service layer and create object of service class in container
-@Repository -->indicate repository class and create object .
-
+@Service --> indicate service layer and create bean of service class in container
+@Repository -->indicate repository class and create bean by spring boot container .
 @slf4j --> To display log on console
 
-@ExceptionHandler---> used with method which indicate exceptionHandler method
-@RestControllerAdvice --> used with class which is hadling exception
+@ExceptionHandler ---> used with method which indicate exception which we are going to handle.
+@RestControllerAdvice --> used with class which is handling exception

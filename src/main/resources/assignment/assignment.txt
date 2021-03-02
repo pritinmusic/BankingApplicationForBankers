@@ -2,3 +2,9 @@ what is exception ,wht is checked and unchecked Exception ...
 
 @annotation we have used in project ... explaination
  add all notblank validation where it is required.
+
+ read what is custome exception...
+
+ Why Model class only(BankEmployee class ...why) is their and use of utility class
+
+
