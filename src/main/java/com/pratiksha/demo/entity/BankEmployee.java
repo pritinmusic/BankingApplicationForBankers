@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -18,15 +20,21 @@ public class BankEmployee {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeId;
+    @NotBlank(message = "EmployeeName is mandatory")
     private String employeeName;
+    @NotBlank(message = "E-mail ID is Mandatory")
     private String emailId;
-    private String  adharNumber;
-    private String  panNumber;
-    private String  bankName;
+    @NotBlank(message = "Adhar Number is mandatory")
+    private String adharNumber;
+    @NotBlank(message = "PAN Number is mandatory")
+    private String panNumber;
+    @NotBlank(message = "Please mention Bank Name ")
+    private String bankName;
+    @NotBlank(message = "IFSC Code is mandatory")
     private String ifscCode;
 
-    @OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    @JoinColumn(name="foreignKey")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "foreignKey")
     private BankEmployeeLogInfo bankEmployeeLogInfo;
 
 }

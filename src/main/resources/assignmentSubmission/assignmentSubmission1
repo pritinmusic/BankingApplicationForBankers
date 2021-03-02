@@ -1,0 +1,35 @@
+log4j --> to print om console our project flow
+differance between api and global exception ....need to use both ?
+how to decide use global exception ...?
+how to decide which exception will throw ?
+ConstrainViolationException ....why and how ?
+private Boolean isActive =false ---> is this true
+
+
+@RstController --> used for creating rest api
+@Autowired --> we are asking object of required class
+@GetMapping --> To Get data from server
+@PostMapping --> To add data to server
+//@PutMapping
+@PatchMapping-->used to partially update data
+@DeleteMapping-->used to delete data
+@RequiredArgConstructor --> used when we are not using @Autowired annotation
+
+@Data-->
+@Id--> identity key in table
+@GeneratedValue -->used to auto increament id in table
+@AllArgConstructor-->Create All Arg. Constructor
+@NoArgConstructor --> Create No Arg.Constructor
+@Table --> used to create table in database
+@Entity --> Indicate entity class
+@RequestHeader--> when passing parameter from header mostly used for update Information
+@PathVariable --> when passing variable from header
+@RequestBody --> passing parameters from body of postman
+
+@Service--> indicate service layer and create object of service class in container
+@Repository -->indicate repository class and create object .
+
+@slf4j --> To display log on console
+
+@ExceptionHandler---> used with method which indicate exceptionHandler method
+@RestControllerAdvice --> used with class which is hadling exception
