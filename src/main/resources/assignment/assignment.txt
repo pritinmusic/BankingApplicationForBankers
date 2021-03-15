@@ -8,3 +8,41 @@ what is exception ,wht is checked and unchecked Exception ...
  Why Model class only(BankEmployee class ...why) is their and use of utility class
 
 
+how to send mail ...
+
+
+ user want a  activation link , please write APi to enable user to activate their account.
+
+ write API
+// write an api to send the OTP on an mail to user
+//colum should be added for OTP
+
+
+
+
+otp basesis user find
+user ny mila to error throw
+agr mil gya isActive =true
+otp=null
+password set again
+
+
+==============================================================================================
+Customer
+--id
+--customerId
+--customerEmail
+--customerMobileNumber
+--Address
+-----Account
+--id
+--accountNumber
+--AccountType(Saving/Current)(error)
+--Initial amount(if Account typem is saving==minimum==10000, if current=0)
+--averageAmountMonthly(if Account type is saving==minimum==10000, if current=0)
+
+create c
+
+send a mail to user tht your account is created , account no.=? ,customer id =?
+customer table add new field is netbankinfg allowd , if yes --> userName and Password addin customer
+password must be 10(alphanumeric )

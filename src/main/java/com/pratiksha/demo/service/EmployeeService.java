@@ -8,6 +8,9 @@ import com.pratiksha.demo.utility.CommonProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -15,14 +18,20 @@ public class EmployeeService {
 
     private final EmployeeRepository repo;
 
+    private final EmailService emailService;
+
     public Response saveEmployee(BankEmployee employee) {
         log.info("inside class name:EmployeeService method:saveEmployee started");
         Response response = new Response();
         employee.getBankEmployeeLogInfo().setIsActive(false);
+        employee.getBankEmployeeLogInfo().setToken(UUID.randomUUID().toString());
         BankEmployee bankEmployee = repo.save(employee);
         if (bankEmployee == null) {
             throw new ApiException(CommonProperties.PROBLEM_ERROR);
         }
+
+        //abcd
+        emailService.sendingEmail(bankEmployee);
         response.setType(CommonProperties.SUCCESS_TYPE);
         response.setMessage(CommonProperties.SUCCESS_SAVE_MESSAGE);
         log.info("inside class name:EmployeeService method:saveEmployee ended");

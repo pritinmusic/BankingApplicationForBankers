@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.engine.internal.Cascade;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Validated
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "bankEmployee")
@@ -32,6 +34,7 @@ public class BankEmployee {
     private String bankName;
     @NotBlank(message = "IFSC Code is mandatory")
     private String ifscCode;
+    private Integer otp;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "foreignKey")

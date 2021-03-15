@@ -24,6 +24,8 @@ public class BankEmployeeLogInfo {
     private String userName;
     @NotBlank(message = "Please give Password")
     private String password;
+    @NotBlank
+    private String token;
 
 
 }
